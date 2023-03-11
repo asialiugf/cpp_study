@@ -330,6 +330,7 @@ class FutureSerial : public PeriodBase<N...> {
         return *this;
     }
 
+    // 重载加号
     friend inline int operator+(const FutureSerial p1, const FutureSerial p2) {
         std::cout << "p1 & p2  " << std::endl;
         return p1.data[p1.index] + p2.data[p2.index];
@@ -341,9 +342,10 @@ class FutureSerial : public PeriodBase<N...> {
     }
     friend inline int operator+(const FutureSerial p, int val) {
         std::cout << "p2 and num  " << std::endl;
-        return val + p.data[p.index];
+        return p.data[p.index] + val;
     }
 
+    // 重载减法
     friend inline int operator-(const FutureSerial p1, const FutureSerial p2) {
         std::cout << "p1 & p2  " << std::endl;
         return p1.data[p1.index] - p2.data[p2.index];
@@ -355,9 +357,10 @@ class FutureSerial : public PeriodBase<N...> {
     }
     friend inline int operator-(const FutureSerial p, int val) {
         std::cout << "p2 and num  " << std::endl;
-        return val - p.data[p.index];
+        return p.data[p.index] - val;
     }
 
+    // 重载乘法
     friend inline int operator*(const FutureSerial p1, const FutureSerial p2) {
         std::cout << "p1 & p2  " << std::endl;
         return p1.data[p1.index] * p2.data[p2.index];
@@ -370,9 +373,10 @@ class FutureSerial : public PeriodBase<N...> {
     }
     friend inline int operator*(const FutureSerial p, int val) {
         std::cout << "p2 and num  " << std::endl;
-        return val * p.data[p.index];
+        return p.data[p.index] * val;
     }
 
+    // 重载除法
     friend inline int operator/(const FutureSerial p1, const FutureSerial p2) {
         std::cout << "p1 & p2  " << std::endl;
         return p1.data[p1.index] / p2.data[p2.index];
@@ -384,7 +388,7 @@ class FutureSerial : public PeriodBase<N...> {
     }
     friend inline int operator/(const FutureSerial p, int val) {
         std::cout << "p2 and num  " << std::endl;
-        return val / p.data[p.index];
+        return p.data[p.index] / val;
     }
 
    public:
