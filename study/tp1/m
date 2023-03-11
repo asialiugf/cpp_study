@@ -1,0 +1,6 @@
+#g++ -o tp01 -std=c++14 tp01.cpp -lpthread
+#g++ -o tp02 -std=gnu++14  tp02.cpp -lpthread
+g++ -o tp02 -std=c++14  tp02.cpp -lpthread
+g++ -o tp03 -std=c++11  tp03.cpp -lpthread
+g++ -o tp04 -std=c++11  tp04.cpp -lpthread -O3
+g++ -o func -std=c++11  func.cpp -lpthread -O3

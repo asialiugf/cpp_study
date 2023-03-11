@@ -1,0 +1,5 @@
+#clang++ -std=c++20 -o x send_fork.cpp -O3 -lpthread
+# g++-10 -std=c++2a -o x temp001.cpp -O3
+#g++-10 -std=c++2a -o x decltype.cpp -O3
+#g++-10 -std=c++2a -o x tl001.cpp -O3
+g++-10 -std=c++2a -o x tl002.cpp -O3

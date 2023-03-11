@@ -1,0 +1,7 @@
+g++ -Wall -std=c++11 -ggdb t1.cpp -O2  -o t1
+g++ -Wall -std=c++11 -ggdb t2.cpp -O2 -o t2
+g++ -Wall -std=c++11 -ggdb t3.cpp -O2 -o t3
+g++ -Wall -std=c++11 -ggdb t5.cpp -O2 -o t5
+g++ -Wall -std=c++11 -ggdb t6.cpp -O2 -o t6
+g++ -Wall -std=c++11 -ggdb t7.cpp -O2 -o t7
+g++ -Wall -std=c++11 -ggdb accum.cpp -O2 -o accum

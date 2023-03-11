@@ -1,0 +1,30 @@
+PROJECT(usocket)
+ 
+cmake_minimum_required(VERSION 2.6)
+ 
+set(CMAKE_CXX_COMPILER "g++")
+ 
+SET(LIB_SRC
+    ./src/socket.c
+    ./src/eventing/libuv.c
+    ./src/eventing/epoll_kqueue.c
+    ./src/eventing/gcd.c
+    ./src/crypto/wolfssl.c
+    ./src/crypto/openssl.c
+    ./src/loop.c
+    ./src/context.c
+    )
+ 
+INCLUDE_DIRECTORIES("./src/")
+ 
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/../lib)
+ 
+ADD_LIBRARY(usocket STATIC ${LIB_SRC})
+ 
+ADD_DEFINITIONS( "-Wall -g -std=c++11" )
+ADD_DEFINITIONS( "-DLIBUS_USE_OPENSSL" )
+ADD_DEFINITIONS( "-DLIBUS_USE_LIBUV" )
+ 
+INSTALL(TARGETS usocket
+    ARCHIVE DESTINATION lib)
+ 

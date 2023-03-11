@@ -1,0 +1,113 @@
+//#include <bits/stdint-intn.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <chrono>
+#include <cstddef>
+#include <cstdlib>
+#include <cstring>
+//#include <cstdint>
+#include <iostream>
+#include <thread>
+
+#include "timestamp.h"
+
+#define random(x) (rand() % x)
+
+int8_t       a1;
+int16_t      a2;
+int32_t      a3;
+int64_t      a4;
+std::int64_t mm;
+std::int16_t sb;
+
+struct s {
+    char y;
+    int  x;
+    char a[ 5 ];
+};
+struct s1 {
+    int  x;
+    char a[ 5 ];
+    char y;
+};
+struct s2 {
+    char y[ 5 ];
+    char a[ 2 ];
+    int  x;
+};
+
+double num = 0;
+int    kk[ 10000 ][ 10000 ];
+
+void ij() {
+    for (int i = 0; i < 10000; i++) {
+        for (int j = 0; j < 10000; j++) {
+            num = num + kk[ i ][ j ];
+        }
+    }
+}
+void ji() {
+    for (int i = 0; i < 10000; i++) {
+        for (int j = 0; j < 10000; j++) {
+            num = num + kk[ j ][ i ];
+        }
+    }
+}
+
+void long_operation() {
+    /* Simulating a long, heavy operation. */
+    using namespace std;
+    using namespace std::chrono_literals;
+    std::this_thread::sleep_for(std::chrono::microseconds(100000));
+}
+
+int main() {
+
+    for (int i = 0; i < 10000; i++) {
+        for (int j = 0; j < 10000; j++) {
+            kk[ i ][ j ] = i;
+        }
+    }
+
+    return 0;
+
+    num = 0;
+
+    return 0;
+    double a[ 1000000 ];
+    double b[ 1000000 ];
+    a[ 1000 ] = 12.57;
+    b[ 0 ]    = 11111112.57;
+    b[ 1000 ] = 11111112.57;
+
+    int k;
+    std::cin >> k;
+
+    std::cout << "k: " << k << std::endl;
+    b[ 1000 ] = 12.33;
+    for (size_t i = 0; i < 1000000; i++) {
+        //        a[ i ] = random(k);
+    }
+    return 0;
+    memcpy(b, a, 1000000 * sizeof(double));
+
+    return 0;
+    for (size_t i = 0; i < 10; i++) {
+        std::cout << a[ i ] << std::endl;
+    }
+
+    std::cout << "b[1000]:" << b[ 1000 ] << std::endl;
+    std::cout << "b[0]:" << b[ 0 ] << std::endl;
+    std::cout << "b[1]:" << b[ 1 ] << std::endl;
+    std::cout << "b[2]:" << b[ 2 ] << std::endl;
+    std::cout << "b[3]:" << b[ 3 ] << std::endl;
+
+    return 0;
+    for (size_t i = 0; i < 10; i++) {
+        std::cout << b[ i ] << std::endl;
+    }
+
+    return 0;
+}

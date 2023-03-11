@@ -1,0 +1,22 @@
+#clang++ -o a.out test01.cpp -std=c++20 -O3
+#./a.out
+# clang++ -o o openMP.cpp -std=c++20 -O3 -fopenmp
+# g++ -fopenmp matrix_multiply_openmp.cpp -o mm_openmp
+# clang++ -o x rand.cpp -std=c++20 -O3 -fopenmp
+# clang++ -o x const.cpp -std=c++20 -O3
+#clang++ -o x char.cpp -std=c++20 -O3
+#clang++ -o x over.cpp -std=c++20 -O3
+#clang++ -o x box.cpp -std=c++20 -O3
+#clang++ -std=c++20 -o x send.cpp -O3 -lpthread
+#clang++ -std=c++20 -o x send_fork.cpp -O3 -lpthread
+# g++-10 -std=c++2a -o x co1.cpp -O3 -lpthread -fcoroutines
+# g++-10 -std=c++2a -o x co2.cpp -O3 -lpthread -fcoroutines
+# g++-10 -std=c++2a -o x co3.cpp -O3 -lpthread -fcoroutines
+# g++-10 -std=c++2a -o x co.cpp -O3 -lpthread -fcoroutines
+# g++-10 -std=c++2a -o x fibo1.cpp -O3 -lpthread -fcoroutines -fpermissive # error
+#g++-10 -std=c++2a -o x pow.cpp -O3
+# g++-10 -std=c++2a -o x bind.cpp -O3
+# g++-10 -std=c++2a -o x mem.cpp -O3
+# g++-10 -std=c++2a -o x testgdb.cpp -O0 -g
+ g++-10 -std=c++11 -o x const.cpp -O3
+# g++-10 -std=c++2a -o x const1.cpp -O0 -g
