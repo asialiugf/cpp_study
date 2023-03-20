@@ -147,6 +147,7 @@ Signal<void()> Update[50];
 template <int... N>
 class Future;
 
+// 每个品种(future)的每个period，会有一个Unit，保存有OHLCV数组
 struct Unit {
     char instrumentID[81];
     int index;
@@ -165,6 +166,7 @@ struct Unit {
     Signal<void()> sig;
 };
 
+// 每个策略进程会有一个Base对象
 class Base {
    public:
     // todo 这里应该是 每一个<M,N>对，有一个 Signal<void()> 对象。
@@ -269,6 +271,7 @@ int Base::FutureInit(const std::map<std::string, std::vector<int>>& future_map, 
     return 0;
 }
 
+// 基类，由PeriodSerialb继承。
 template <int... N>
 class PeriodBase {
    public:
@@ -456,6 +459,7 @@ class FutureSerial : public PeriodBase<N...> {
     double* data;  // 构造函数初始化。
 };
 
+// Future类，实际上是每个future的每个period有一个Future对象。这里的Future，应该改名为 FuturePeriod更好。
 // Future是继承 PeriodBase<M,N> 这里<M,N>是实例化了
 // #define 5F 300
 // Future<M,N>( base* bb, "ru2303", 5F)
