@@ -1,0 +1,1 @@
+g++ fmt.cpp -lfmt
